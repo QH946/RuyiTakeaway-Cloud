@@ -1,0 +1,29 @@
+server:
+  port: 8083
+
+# 在这里配置 权限服务 所有环境都能使用的配置
+ruyi:
+  # 文件下载保存路径
+  path: F:\img\
+
+  mysql:
+    database: ruyi
+  swagger:
+    enabled: true
+    docket:
+      core:
+        title: 移动端管理模块
+        base-package: com.qh.ruyi.front.controller
+
+# mybatis-plus 独立配置
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+
+
+

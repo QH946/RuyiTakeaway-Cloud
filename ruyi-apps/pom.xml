@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.qh</groupId>
+        <artifactId>ruyi-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../ruyi-parent</relativePath>
+    </parent>
+
+    <artifactId>ruyi-apps</artifactId>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+    <description>业务系统服务父pom</description>
+
+    <modules>
+        <module>ruyi-auth</module>
+        <module>ruyi-gateway</module>
+        <module>ruyi-backend</module>
+        <module>ruyi-backend-application</module>
+        <module>ruyi-common</module>
+        <module>ruyi-front-application</module>
+        <module>ruyi-front</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-auth-entity</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--<dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-auth-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>-->
+
+            <dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-tools-user</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-tools-j2cache</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-tools-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-tools-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-tools-databases</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-tools-swagger2</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-tools-dozer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-tools-log</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-tools-validator</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-tools-jwt</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qh</groupId>
+                <artifactId>ruyi-tools-xss</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
+
+        </dependencies>
+    </dependencyManagement>
+</project>

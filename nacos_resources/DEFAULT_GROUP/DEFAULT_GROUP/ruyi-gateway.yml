@@ -1,0 +1,80 @@
+server:
+  port: 8080
+
+# 在这里配置 权限服务 所有环境都能使用的配置
+ruyi:
+  mysql:
+    ip: 127.0.0.1
+    port: 3306
+    driverClassName: com.mysql.cj.jdbc.Driver
+    database: ruyi
+    username: root
+    password: root
+    
+  database:
+    isBlockAttack: false  # 是否启用 攻击 SQL 阻断解析器
+    
+  swagger:
+    enabled: true
+    docket:
+      auth:
+        title: 权限模块
+        base-package: com.qh.ruyi.authority.controller.auth
+      common:
+        title: 公共模块
+        base-package: com.qh.ruyi.authority.controller.common
+      core:
+        title: 组织岗位模块
+        base-package: com.qh.ruyi.authority.controller.core
+
+spring:
+  cloud:
+
+
+
+  # mysql配置
+  datasource:
+    druid:
+      username: ${ruyi.mysql.username}
+      password: ${ruyi.mysql.password}
+      driver-class-name: ${ruyi.mysql.driverClassName}
+      url: jdbc:mysql://${ruyi.mysql.ip}:${ruyi.mysql.port}/${ruyi.mysql.database}?characterEncoding=utf8&useUnicode=true&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+      db-type: mysql
+      initialSize: 10
+      minIdle: 10
+      maxActive: 500
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      validation-query: SELECT 'x'
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000  #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      min-evictable-idle-time-millis: 300000    #配置一个连接在池中最小生存的时间，单位是毫秒
+mybatis-plus:
+  mapper-locations:
+    - classpath*:mapper_**/**/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.qh.ruyi.*.entity;com.qh.ruyi.database.mybatis.typehandler
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+      insert-strategy: NOT_NULL
+      update-strategy: NOT_NULL
+      select-strategy: NOT_EMPTY
+  configuration:
+    #配置返回数据库(column下划线命名&&返回java实体是驼峰命名)，
+    #自动匹配无需as（没开启这个，SQL需要写as： select user_id as userId）
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    cache-enabled: false
+    #配置JdbcTypeForNull, oracle数据库必须配置
+    jdbc-type-for-null: 'null'
+
+authentication:
+  user:
+    header-name: token
+    expire: 43200               # 外部token有效期为12小时
+    pri-key: client/pri.key    # 加密
+    pub-key: client/pub.key    # 解密

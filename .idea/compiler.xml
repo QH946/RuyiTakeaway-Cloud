@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ruyi-tools-user" />
+        <module name="ruyi-front-api" />
+        <module name="ruyi-tools-j2cache" />
+        <module name="ruyi-tools-core" />
+        <module name="ruyi-backend-service" />
+        <module name="ruyi-tools-databases" />
+        <module name="ruyi-tools-dozer" />
+        <module name="ruyi-backend-application" />
+        <module name="ruyi-tools-xss" />
+        <module name="ruyi-tools-validator" />
+        <module name="ruyi-gateway" />
+        <module name="ruyi-tools-swagger2" />
+        <module name="ruyi-tools-common" />
+        <module name="ruyi-common" />
+        <module name="ruyi-front-application" />
+        <module name="ruyi-tools-log" />
+        <module name="ruyi-auth-server" />
+        <module name="ruyi-backend-api" />
+        <module name="ruyi-tools-jwt" />
+        <module name="ruyi-auth-entity" />
+        <module name="ruyi-front-service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ruyi-auth-entity" options="-parameters" />
+      <module name="ruyi-auth-server" options="-parameters" />
+      <module name="ruyi-backend-api" options="-parameters" />
+      <module name="ruyi-backend-application" options="-parameters" />
+      <module name="ruyi-backend-service" options="-parameters" />
+      <module name="ruyi-common" options="-parameters" />
+      <module name="ruyi-front-api" options="-parameters" />
+      <module name="ruyi-front-application" options="-parameters" />
+      <module name="ruyi-front-service" options="-parameters" />
+      <module name="ruyi-gateway" options="-parameters" />
+      <module name="ruyi-tools-common" options="-parameters" />
+      <module name="ruyi-tools-core" options="-parameters" />
+      <module name="ruyi-tools-databases" options="-parameters" />
+      <module name="ruyi-tools-dozer" options="-parameters" />
+      <module name="ruyi-tools-j2cache" options="-parameters" />
+      <module name="ruyi-tools-jwt" options="-parameters" />
+      <module name="ruyi-tools-log" options="-parameters" />
+      <module name="ruyi-tools-swagger2" options="-parameters" />
+      <module name="ruyi-tools-user" options="-parameters" />
+      <module name="ruyi-tools-validator" options="-parameters" />
+      <module name="ruyi-tools-xss" options="-parameters" />
+    </option>
+  </component>
+</project>
