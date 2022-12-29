@@ -1,4 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    com.qh.ruyi.log.LogAutoConfiguration
-org.springframework.context.ApplicationContextInitializer=\
-    com.qh.ruyi.log.init.ApplicationLoggerInitializer
